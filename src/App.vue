@@ -291,7 +291,7 @@
 
 <script>
 import AppHeader from '@/components/Header.vue';
-import AuthModal from '@/components/Auth.vue';
+import AuthModal from '@/components/auth/Auth.vue';
 
 export default {
   name: 'App',
