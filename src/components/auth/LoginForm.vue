@@ -47,15 +47,23 @@ export default {
     loginBtnText: 'Submit',
   }),
   methods: {
-    login(values) {
-      console.log(values);
+    async login(values) {
       this.loggingIn = true;
       this.loginBtnText = 'Please wait! We are logging you in.';
 
-      setTimeout(() => {
+      try {
+        await this.$store.dispatch('login', values);
+      } catch (error) {
         this.loggingIn = false;
-        this.loginBtnText = 'You are logged in.';
-      }, 3000);
+        this.loginBtnText = 'Submit';
+        // eslint-disable-next-line no-alert
+        alert('Invalid Credentials.');
+        return;
+      }
+
+      this.loggingIn = false;
+      this.loginBtnText = 'You are logged in.';
+      window.location.reload();
     },
   },
 };

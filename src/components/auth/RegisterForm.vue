@@ -120,15 +120,23 @@ export default {
     registerBtnText: 'Submit',
   }),
   methods: {
-    register(values) {
-      console.log(values);
+    async register(values) {
       this.registeringIn = true;
       this.registerBtnText = 'Please wait! Your account is being creating.';
 
-      setTimeout(() => {
+      try {
+        await this.$store.dispatch('register', values);
+      } catch (error) {
         this.registeringIn = false;
-        this.registerBtnText = 'Your account created successfully.';
-      }, 3000);
+        this.registerBtnText = 'Submit';
+        // eslint-disable-next-line no-alert
+        alert('An un expected error occured! Please try again later.');
+        return;
+      }
+
+      this.registeringIn = false;
+      this.registerBtnText = 'Your account created successfully.';
+      window.location.reload();
     },
   },
 };
