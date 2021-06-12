@@ -36,9 +36,8 @@ const router = createRouter({
   linkExactActiveClass: 'text-yellow-500',
 });
 
-router.beforeEach((to, from, next) => {
-  // eslint-disable-next-line arrow-parens
-  if (!to.matched.some(record => record.meta.requiresAuth)) {
+router.beforeEach((to, _from, next) => {
+  if (!to.matched.some((record) => record.meta.requiresAuth)) {
     next();
     // eslint-disable-next-line no-useless-return
     return;
