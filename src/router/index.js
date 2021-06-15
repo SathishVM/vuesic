@@ -24,6 +24,11 @@ const routes = [
     redirect: { name: 'Manage' },
   },
   {
+    path: '/songs/:songId',
+    name: 'Song',
+    component: () => import(/* webpackChunkName: "song" */ '@/views/Song.vue'),
+  },
+  {
     path: '/:catchAll(.*)*',
     name: 'NotFound',
     component: () => import(/* webpackChunkName: "notfound" */ '@/views/NotFound.vue'),
