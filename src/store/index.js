@@ -102,7 +102,7 @@ export default createStore({
         requestAnimationFrame(() => dispatch('progress'));
       }
     },
-    updateSeek({ state }, payload) {
+    updateSeek({ state, dispatch }, payload) {
       // eslint-disable-next-line no-useless-return
       if (!state.sound.playing) return;
 
@@ -113,7 +113,7 @@ export default createStore({
 
       state.sound.seek(seconds);
 
-      state.sound.once('seek', () => this.dispatch('progress'));
+      state.sound.once('seek', () => dispatch('progress'));
     },
   },
 });
