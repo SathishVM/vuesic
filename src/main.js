@@ -7,6 +7,10 @@ import { auth } from './firebase/firebase';
 import './assets/tailwind.css';
 import './assets/main.css';
 import './registerServiceWorker';
+import 'nprogress/nprogress.css';
+import ProgressBar from './plugins/progressBar';
+
+ProgressBar(router);
 
 let app;
 
