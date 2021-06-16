@@ -52,7 +52,7 @@ export default {
   components: { AppSongItem },
   data: () => ({
     songs: [],
-    maxPerPage: 1,
+    maxPerPage: 25,
     pendingRequest: false,
   }),
   async created() {
