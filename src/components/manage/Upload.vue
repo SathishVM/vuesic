@@ -63,8 +63,6 @@ export default {
 
       const files = $event.dataTransfer ? [...$event.dataTransfer.files] : [...$event.target.files];
 
-      console.log($event);
-
       files.forEach((file) => {
         // eslint-disable-next-line no-constant-condition
         if (file.type !== 'audio/mpeg') {
@@ -107,7 +105,6 @@ export default {
           (snapshot) => {
             const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
             this.uploads[uploadIndex].currentProgress = progress;
-            console.log(this.uploads[uploadIndex].currentProgress);
           },
           (error) => {
             this.uploads[uploadIndex].variant = 'bg-red-400';
