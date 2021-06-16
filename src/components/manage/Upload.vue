@@ -73,6 +73,20 @@ export default {
           return;
         }
 
+        if (!navigator.onLine) {
+          this.uploads.push({
+            task: {},
+            currentProgress: 100,
+            name: file.name,
+            variant: 'bg-red-400',
+            icon: 'fas fa-times',
+          });
+
+          // eslint-disable-next-line no-alert
+          alert('You are in offline. Please upload your file(s) when you in online.');
+          return;
+        }
+
         const storageRef = storage.ref();
         const songsRef = storageRef.child(`songs/${file.name}`);
         const task = songsRef.put(file);
