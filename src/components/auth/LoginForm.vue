@@ -1,5 +1,5 @@
 <template>
-  <vee-form :validation-schema="loginSchema" @submit="login">
+  <vee-form :validation-schema="loginSchema" :initial-values="previewLoginData" @submit="login">
     <!-- Email -->
     <div class="mb-3">
       <label class="inline-block mb-2">Email</label>
@@ -42,6 +42,10 @@ export default {
     loginSchema: {
       email: 'required|email',
       password: 'required|min:8|max:20',
+    },
+    previewLoginData: {
+      email: 'test@test.com',
+      password: '12345678',
     },
     loggingIn: false,
     loginBtnText: 'Submit',
