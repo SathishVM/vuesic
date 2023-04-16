@@ -1,8 +1,8 @@
 export default {
-  apiKey: 'AIzaSyA7SzYt8txVGT-jVFbA1kQJOv3Et-4NPPU',
-  authDomain: 'vuesic-72d30.firebaseapp.com',
-  projectId: 'vuesic-72d30',
-  storageBucket: 'vuesic-72d30.appspot.com',
-  messagingSenderId: '308717400457',
-  appId: '1:308717400457:web:f8fec8ae5027543cf17158',
+  apiKey: "AIzaSyBUoyQr4q_eXdpADcVrW7eCZRfppbZfNEg",
+  authDomain: "vuesic-7861f.firebaseapp.com",
+  projectId: "vuesic-7861f",
+  storageBucket: "vuesic-7861f.appspot.com",
+  messagingSenderId: "75078767129",
+  appId: "1:75078767129:web:a6db0613aa50151c989088"
 };
